@@ -1,5 +1,6 @@
 package sidebar;
 
+import elements.ButtonPaneUrl;
 import elements.DigitalClock;
 
 import javax.swing.*;
@@ -15,6 +16,7 @@ public class SidebarProgram {
     private Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 
     private DigitalClock digitalClock;
+    private ButtonPaneUrl buttonPaneUrl;
 
     public SidebarProgram() {
         sidebarJFrame = new JFrame("Sidebar");
@@ -23,6 +25,7 @@ public class SidebarProgram {
         sidebarJFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         digitalClock = new DigitalClock();
+        buttonPaneUrl = new ButtonPaneUrl();
         setLayout();
 
         sidebarJFrame.setVisible(true);
@@ -36,6 +39,7 @@ public class SidebarProgram {
         sidebarJFrame.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
         sidebarJFrame.getContentPane().add(digitalClock.getTimeLabel());
+        sidebarJFrame.getContentPane().add(buttonPaneUrl.getButtonUrlJPanel());
     }
 
     public static void main(String[] args) {
